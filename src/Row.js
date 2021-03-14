@@ -18,11 +18,11 @@ export function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]); //if leave blank only run once, if put movies here, its gonna runs everytime movies changes
 
-  console.table(movies);
+  //console.table(movies);
 
   return (
     <>
-      <h2>{title}</h2>
+      <h2 className="row">{title}</h2>
       <div className="row__posters">
         {movies.map((movie) => {
           return (
