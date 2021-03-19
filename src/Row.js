@@ -45,11 +45,10 @@ export function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   return (
-    <>
-      <h2 className="row">{title}</h2>
+    <div className="row">
+      <h2>{title}</h2>
       <div className="row__posters">
-        {movies.map((movie) => {
-          return (
+        {movies.map((movie) => (
             <img
               key={movie.id}
               onClick={() => handleClick(movie)}
@@ -59,10 +58,9 @@ export function Row({ title, fetchUrl, isLargeRow }) {
               }`}
               alt={movie.name}
             />
-          );
-        })}
+        ))}
       </div>
-      {trailerUrl} && <YouTube videoId={trailerUrl} opts={opts} />
-    </>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      </div>
   );
 }
